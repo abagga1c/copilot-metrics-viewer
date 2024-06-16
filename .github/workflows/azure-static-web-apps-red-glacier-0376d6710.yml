@@ -19,6 +19,9 @@ jobs:
         with:
           submodules: true
           lfs: false
+      - name: 'Update env file'
+        run: |
+          echo VUE_APP_GITHUB_TOKEN=${{ secrets.AUTHORIZED_PAT_COPILOT}} >> .env
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
